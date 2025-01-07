@@ -7,13 +7,14 @@
 </head>
 <body>
     <H1>EXPRESS</H1>
-    <form  action="/add" method="post" >
+    <form  method="POST" action="http://localhost:4000/add" >
         <label for="">FIRST NAME </label>
-        <input type="text" placeholder="enter the name" id="first_Name" >
+        <input type="text" placeholder="enter the name" id="first_Name" name="name">
         <br>
       
 
-        <button id="submit" onsubmit="handleSubmit">SUBMIT</button>
+        <button type="submit" id="submit">SUBMIT</button>
     </form>
+    <!-- <script src="script.js"></script> -->
 </body>
 </html>
