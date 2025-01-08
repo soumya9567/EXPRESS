@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose"
+import User from "./public/script.js"
 const app = express();
 
 
@@ -29,8 +30,26 @@ app.get("/",(req,res)=>{
     res.sendFile("index.html")
 })
 
-app.post("/add",(req,res)=>{
-    res.send("addfile")
+
+// app.post("/add",async(req,res)=>{
+//     try{
+//     const user = await User.find({})
+//     res.status(200).json(user)
+//    console.log(req.body,"request body")
+//     }
+//     catch{
+//         res.status(500).json({message:error.message})
+//     }
+// })
+
+app.post("/add",async(req,res)=>{
+    try{
+    const user = await User.create(req.body)
+    res.status(200).json(user)
    console.log(req.body,"request body")
+    }
+    catch{
+        res.status(500).json({message:error.message})
+    }
 })
 
